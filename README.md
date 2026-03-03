@@ -1,37 +1,50 @@
-# 🔐 Cryptographic Cipher Learning
+# Cryptographic Cipher Learning
 
-This repository is a collection of Python programs that demonstrate the working of classical cryptographic ciphers. These implementations are part of my ongoing learning journey in the field of cryptography and cybersecurity.
+This repository contains beginner-friendly implementations of classical cryptographic ciphers in Python and C++.
 
----
+## Objective
 
-## 📌 About
+- Understand how classical encryption and decryption algorithms work
+- Practice substitution and transposition cipher logic
+- Build a foundation for modern cryptography concepts
 
-Cryptography is the practice and study of techniques for secure communication in the presence of third parties. Classical ciphers form the foundation of modern cryptographic systems and help in understanding the core principles of encryption, decryption, and secure key usage.
+## Cipher List (with one-line definitions)
 
-This repository contains implementations of basic transposition and substitution ciphers to understand:
-- How encryption scrambles plain text into cipher text
-- How keys influence the transformation process
+| Cipher | File | One-line definition |
+|---|---|---|
+| Affine Cipher | `affine_cipher.py` | A monoalphabetic substitution cipher that maps each letter using the function `(a*x + b) mod 26`. |
+| Atbash Cipher | `atbash_cipher.py` | A fixed substitution cipher that reverses the alphabet (`A <-> Z`, `B <-> Y`, etc.). |
+| Caesar Cipher | `caesar_cipher.py` | A substitution cipher that shifts each letter by a fixed number of positions. |
+| Hill Cipher | `hill_cipher.py` | A polygraphic substitution cipher that encrypts letter blocks using matrix multiplication modulo 26. |
+| Multiplicative Cipher | `multiplicative_cipher.cpp` | A substitution cipher that multiplies each letter index by a key modulo 26. |
+| Playfair Cipher | `playfair_cipher.cpp` | A digraph substitution cipher that encrypts pairs of letters using a 5x5 key square. |
+| Reverse Cipher | `reverse_cipher.py` | A transposition-style method that encrypts by reversing the entire text. |
+| Columnar Transposition (Single) | `transposition_cipher1.py` | A transposition cipher that writes text in rows and reads it column-wise based on key order. |
+| Columnar Transposition (Double) | `transposition_cipher2.py` | A stronger variant that applies columnar transposition two times (possibly with different keys). |
+| Rail Fence Cipher | `transposition_cipher3.py` | A transposition cipher that places characters in a zig-zag rail pattern and reads row-wise. |
+| Vigenere Cipher | `vigen�re_cipher.py` | A polyalphabetic substitution cipher that uses a repeating keyword to determine shifts. |
 
-Each program is written in Python with clean and modular functions, accompanied by inline comments for better understanding.
 
----
+## How to Run
 
-## 💡 Objective
+### Run Python ciphers
 
-- To learn and implement classical cryptographic ciphers
-- To understand their internal workings, strengths, and limitations
-- To build a strong base for learning modern encryption techniques
+```bash
+python affine_cipher.py
+python transposition_cipher1.py
+```
 
----
+### Compile and run C++ ciphers
 
-## 📦 How to Run
+```bash
+g++ multiplicative_cipher.cpp -o multiplicative_cipher
+./multiplicative_cipher
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/<your-username>/Cryptographic-Cipher-Learning.git
-   cd Cryptographic-Cipher-Learning
+g++ playfair_cipher.cpp -o playfair_cipher
+./playfair_cipher
+```
 
-2. Run any python code:
-   ```bash
-   python transposition_cipher2.py
+## Notes
 
+- These scripts are educational and focused on clarity over production security.
+- Classical ciphers are not secure for modern real-world cryptographic use.
