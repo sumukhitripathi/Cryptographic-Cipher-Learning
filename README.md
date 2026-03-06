@@ -1,6 +1,6 @@
 # Cryptographic Cipher Learning
 
-This repository contains beginner-friendly implementations of classical cryptographic ciphers in Python and C++.
+This repository contains beginner-friendly implementations of classical cryptographic ciphers and hashing examples in Python and C++.
 
 ## Objective
 
@@ -8,7 +8,7 @@ This repository contains beginner-friendly implementations of classical cryptogr
 - Practice substitution and transposition cipher logic
 - Build a foundation for modern cryptography concepts
 
-## Cipher List (with one-line definitions)
+## Cipher List
 
 | Cipher | File | One-line definition |
 |---|---|---|
@@ -22,6 +22,7 @@ This repository contains beginner-friendly implementations of classical cryptogr
 | Columnar Transposition (Single) | `transposition_cipher1.py` | A transposition cipher that writes text in rows and reads it column-wise based on key order. |
 | Columnar Transposition (Double) | `transposition_cipher2.py` | A stronger variant that applies columnar transposition two times (possibly with different keys). |
 | Rail Fence Cipher | `transposition_cipher3.py` | A transposition cipher that places characters in a zig-zag rail pattern and reads row-wise. |
+| SHA-1 Hash | `sha1_hash.py` | A cryptographic hash function that generates a 160-bit digest for input data integrity checks. |
 | Vigenere Cipher | `vigen�re_cipher.py` | A polyalphabetic substitution cipher that uses a repeating keyword to determine shifts. |
 
 
@@ -31,7 +32,6 @@ This repository contains beginner-friendly implementations of classical cryptogr
 
 ```bash
 python affine_cipher.py
-python transposition_cipher1.py
 ```
 
 ### Compile and run C++ ciphers
@@ -40,11 +40,10 @@ python transposition_cipher1.py
 g++ multiplicative_cipher.cpp -o multiplicative_cipher
 ./multiplicative_cipher
 
-g++ playfair_cipher.cpp -o playfair_cipher
-./playfair_cipher
 ```
 
 ## Notes
 
 - These scripts are educational and focused on clarity over production security.
 - Classical ciphers are not secure for modern real-world cryptographic use.
+- SHA-1 is deprecated for collision resistance and should not be used in new security-critical systems.
